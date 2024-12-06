@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Second Lowest and Greatest</title>
+  <script>
+    function findSecondLowestAndGreatest() {
+      // Prompt the user to input numbers
+      const userInput = prompt("Enter a list of numbers separated by commas:");
+ 
+      // Convert the input into an array of numbers
+      const arr = userInput.split(',').map(Number);
+ 
+      // Validate the input
+      if (arr.length < 2 || arr.some(isNaN)) {
+        alert("Please enter at least two valid numbers separated by commas.");
+        return;
+      }
+ 
+      // Sort the array in ascending order
+      arr.sort(function (a, b) {
+        return a - b;
+      });
+ 
+      // Find the second lowest and second greatest
+      const secondLowest = arr[1];
+      const secondGreatest = arr[arr.length - 2];
+ 
+      // Display the result
+      alert(`Second Lowest: ${secondLowest}, Second Greatest: ${secondGreatest}`);
+
+      document.write(`Second Lowest: ${secondLowest}, Second Greatest: ${secondGreatest}`);
+    }
+  </script>
+</head>
+<body>
+  <h1>Find Second Lowest and Second Greatest Numbers</h1>
+  <button onclick="findSecondLowestAndGreatest()">Enter Numbers</button>
+</body>
+</html>
